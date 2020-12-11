@@ -27,7 +27,7 @@ node index.js
 
 
 ## Credits
-[creditGitName](https://github.com/creditGitName)
+[${creditGitName}](https://github.com/${creditGitName})
 
 
 ## License
