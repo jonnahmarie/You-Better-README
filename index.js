@@ -1,8 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const writeFileAsync = require("util.promisify");
 const markdown = require("./getMarkDown");
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const promptUser = () =>
     inquirer.prompt([
@@ -34,7 +35,7 @@ const promptUser = () =>
         {
             type: "input",
             name: "credits",
-            message: "Who are your contributors, if any?"
+            message: "What are your contributors' GitHub usernames? (If more than one, please separate each username with a comma and no space.)"
         },
         {
             type: "input",
@@ -53,20 +54,7 @@ const promptUser = () =>
         }
     ]);
 
-// promptUser()
-//     .then((answers) => writeFileAsync("./getMarkDown.js"))
-
-    // console.log(promptUser);
-
-async function init() {
-    try {
-        const answers = await promptUser();
-        const generateMd = getMarkDown(answers);
-        await writeFileAsync("./Generated_Readme/README.md", generateMd);
-        console.log("file was generated");
-    } catch(err) {
-        console.log(err)
-    }
-}
-
-init();
+promptUser()
+    .then((answers) => writeFileAsync("./Generated_Readme/README.md", markdown(answers)))
+    .then(() => console.log("ReadMe.md file generated successfully"))
+    .catch((err) => console.log(err));
