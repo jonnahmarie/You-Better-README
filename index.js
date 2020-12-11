@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios = require("axios");
-const markdown = require("./getMarkDown.js");
+const util = require("util");
+const writeFileAsync = require("util.promisify");
+const markdown = require("./getMarkDown");
 
 const promptUser = () =>
     inquirer.prompt([
@@ -52,9 +53,20 @@ const promptUser = () =>
         }
     ]);
 
-promptUser()
-    .then((answers) => writeFileAsync("getMarkDown.js"))
+// promptUser()
+//     .then((answers) => writeFileAsync("./getMarkDown.js"))
 
     // console.log(promptUser);
 
-    
+async function init() {
+    try {
+        const answers = await promptUser();
+        const generateMd = getMarkDown(answers);
+        await writeFileAsync("./Generated_Readme/README.md", generateMd);
+        console.log("file was generated");
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+init();
