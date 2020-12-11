@@ -27,7 +27,7 @@ node index.js
 
 
 ## Credits
-[${creditGitName}](https://github.com/${creditGitName})
+[jonnahmarie](https://github.com/jonnahmarie)
 
 
 ## License
