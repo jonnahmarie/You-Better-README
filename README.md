@@ -23,10 +23,12 @@
     ```
     node index.js
     ```
+    [Video Demo Link](https://drive.google.com/file/d/17xP4uo3DEzEXq6p47L-txAITOa1HVjyM/view?usp=sharing)
+
 
     ## Credits
     [creditGitName](https://github.com/creditGitName)
-
+    ![Screenshot](./screenshot.png)
 
     ## License
     This project is licensed under the MIT license.
