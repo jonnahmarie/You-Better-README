@@ -14,7 +14,7 @@ function getMarkDown(answers) {
     # ${answers.projectTitle}
     
     ## Description
-    ${answers.description}
+    ${answers.projectDescription}
 
     ## Deployed Project
     [Linked here](${answers.deployedPath})
@@ -40,7 +40,7 @@ function getMarkDown(answers) {
     ${creditResult}
 
     ## License
-    This project is licensed under the ${answers.license} license.
+    This project is licensed under the ${answers.licenseName} license.
    ` ;
 };
 
