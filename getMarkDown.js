@@ -7,7 +7,7 @@ function getMarkDown(answers) {
 
     for (let i = 0; i < creditUsersArr.length; i++) {
         var creditGitName = creditUsersArr[i];
-        var creditResult = `[${creditGitName}](https://github.com/${creditGitName})\r\n`;
+        var creditResult = `[creditGitName](https://github.com/creditGitName)\r\n`;
     };
 
     return `

@@ -25,7 +25,7 @@
     ```
 
     ## Credits
-    [jonnahmarie](https://github.com/jonnahmarie)
+    [creditGitName](https://github.com/creditGitName)
 
 
     ## License
