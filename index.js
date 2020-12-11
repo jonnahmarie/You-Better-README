@@ -33,17 +33,12 @@ const promptUser = () =>
         {
             type: "input",
             name: "credits",
-            message: "What are the GitHub usernames of your co-collaborators (if any)? If there are multiple, please separate the usernames with a comma and no space."
+            message: "Who are your contributors, if any?"
         },
         {
             type: "input",
             name: "licenseName",
             message: "What is the name of the license that applies to your project?"
-        },
-        {
-            type: "input",
-            name: "licensePath",
-            message: "Please provide the URL linking to the aforementioned license."
         },
         {
             type: "input",
@@ -56,6 +51,9 @@ const promptUser = () =>
             message: "Please provide the URL linking to your deployed project."
         }
     ]);
+
+promptUser()
+    .then((answers) => writeFileAsync("getMarkDown.js"))
 
     // console.log(promptUser);
 
